@@ -46,7 +46,7 @@
       </tr></thead>
 % for item in c.invoice.items:
 %   if not (item.cost == 0 and item.product and item.product.category.invoice_free_products == False):
-      <tr class="${ h.cycle('even', 'odd') }">
+      <tr class="${ loop.cycle('even', 'odd') }">
         <td>${ item.description }</td>
         <td style="text-align:center">${ item.qty }</td>
         <td style="text-align:right">${ h.number_to_currency(item.cost/100.0) }</td>

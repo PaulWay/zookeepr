@@ -11,7 +11,7 @@
 <br>
 <table>
 % for role in c.roles:
-    <tr class="${ h.cycle('even', 'odd') }">
+    <tr class="${ loop.cycle('even', 'odd') }">
         <td valign="middle">
             <% has = role in c.person.roles %>
             ${ ('is not', 'is')[has] }

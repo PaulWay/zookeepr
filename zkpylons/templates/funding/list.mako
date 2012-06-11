@@ -17,7 +17,7 @@ on the view link; or to edit, click on the edit link.</p>
     <th>&nbsp;</th>
   </tr>
 %   for s in c.person.funding:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td>${ s.type.name }</td>
     <td>
 %     if s.status.name == 'Pending':

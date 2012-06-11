@@ -25,7 +25,7 @@
 % if len(c.role.people) > 0:
 <table>
 %   for person in c.role.people:
-<tr class="${ h.cycle('even', 'odd') }">
+<tr class="${ loop.cycle('even', 'odd') }">
 <td>
 ${ h.link_to("%d - %s %s" % (person.id, person.firstname, person.lastname), url=h.url_for(controller='person', id=person.id, action='view')) }
 </td>

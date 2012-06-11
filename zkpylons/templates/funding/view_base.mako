@@ -55,7 +55,7 @@ ${ h.link_to('Review this funding application', url=h.url_for(controller='fundin
 </tr>
 
 %     for r in c.funding.reviews:
-<tr class="${ h.cycle('even', 'odd') }">
+<tr class="${ loop.cycle('even', 'odd') }">
 <td style="vertical-align: top;">
 ${ h.link_to("%s - %s" % (r.id, r.reviewer.fullname()), url=h.url_for(controller='funding_review', id=r.id, action='view')) }
 </td>

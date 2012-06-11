@@ -25,7 +25,7 @@ import urllib
 <table>
 ##% for schedule in  c.talk.event.schedule:
 % for schedule in  c.schedule:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td><strong>Day:</strong></td><td>${ schedule.time_slot.start_time.strftime("%A %d %B %Y") }</td>
     <td><strong>Time:</strong></td><td>${ schedule.time_slot.start_time.strftime("%H:%M") } - ${ schedule.time_slot.end_time.strftime("%H:%M") }</td>
     <td><strong>Location:</strong></td><td>${ schedule.location.display_name }</td>
@@ -33,7 +33,7 @@ import urllib
 % endfor
 
 % if c.talk.project or c.talk.url:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td><strong>Project:</td>
     <td colspan="5">
 %   if c.talk.url:
@@ -57,7 +57,7 @@ ${ c.talk.url }
 </td>
 
 % if c.talk.type.name.startswith('Tutorial'):
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td><strong>Wiki Page:</td>
     <td colspan="5"><a href="/wiki/index.php/Tutorials/${ urllib.quote(c.talk.title.replace(" ", "_")) }">${ c.talk.title }</a></td>
   </tr>

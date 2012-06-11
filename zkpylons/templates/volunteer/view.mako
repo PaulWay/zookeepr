@@ -83,7 +83,7 @@ None
         </tr>
 %   for area in category['questions']:
 <%    code = area['name'].replace(' ', '_').replace('.', '_') %>
-        <tr class="${ h.cycle('even', 'odd') }">
+        <tr class="${ loop.cycle('even', 'odd') }">
           <td valign="middle" align="center">${ h.yesno(code in c.volunteer.areas) |n }</td>
           <td>${ area['name'] }
 %     if area.has_key('description'):
@@ -96,7 +96,7 @@ None
       <tr>
         <td colspan='2'><h3>Other Information</h3></td>
       </tr>
-      <tr class="${ h.cycle('even', 'odd') }">
+      <tr class="${ loop.cycle('even', 'odd') }">
         <td>
           <p class="entries">Other:</p>
         </td>
@@ -106,7 +106,7 @@ None
         </td>
       </tr>
 
-      <tr class="${ h.cycle('even', 'odd') }">
+      <tr class="${ loop.cycle('even', 'odd') }">
         <td>
           <p class="entries">Experience:</p>
         </td>

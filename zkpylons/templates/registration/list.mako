@@ -155,7 +155,7 @@ if "manual_invoice" in c.registration_request and c.registration_request['manual
 <% count = 0 %>
 % for registration in c.registration_collection:
     <% count += 1 %>
-      <tr class="${ h.cycle('odd', 'even') }">
+      <tr class="${ loop.cycle('odd', 'even') }">
         <td>${ h.link_to('id: ' + str(registration.id), url=h.url_for(action='view', id=registration.id)) }</td>
         <td>${ h.link_to(h.util.html_escape(registration.person.firstname + ' ' + registration.person.lastname), h.url_for(controller='person', action='view', id=registration.person.id)) }<br />
         ${ registration.person.email_address | h }</td>

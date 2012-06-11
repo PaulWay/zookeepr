@@ -87,7 +87,7 @@ ${ h.line_break(h.util.html_escape(person.experience)) |n}
 % endif
 
 % for a in c.proposal.attachments:
-<tr class="${ h.cycle('even', 'odd') }">
+<tr class="${ loop.cycle('even', 'odd') }">
 
 <td>
 ${ h.link_to(h.util.html_escape(a.filename), url=h.url_for(controller='attachment', action='view', id=a.id)) }

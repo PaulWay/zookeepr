@@ -13,7 +13,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for schedule in c.schedule_collection:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ h.link_to(schedule.id, h.url_for(action='view', id=schedule.id)) }</td>
     <td>${ h.link_to(schedule.time_slot.description, url=h.url_for(controller='time_slot', action='view', id=schedule.time_slot_id)) }</td>
     <td>${ h.link_to(schedule.location.display_name, url=h.url_for(controller='location', action='view', id=schedule.location_id)) }</td>

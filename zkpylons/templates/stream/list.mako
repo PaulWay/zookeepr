@@ -9,7 +9,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for stream in c.stream_collection:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ h.link_to(stream.name, url=h.url_for(action='view', id=stream.id)) }</td>
 %       if c.can_edit:
 %           for action in ['edit', 'delete']:

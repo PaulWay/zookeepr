@@ -14,7 +14,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for event in c.event_collection:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ h.link_to(event.id, h.url_for(action='view', id=event.id)) }</td>
     <td>${ h.link_to(event.type.name, h.url_for(controller='event_type', action='view', id=event.type.id)) }</td>
 %     if event.proposal:

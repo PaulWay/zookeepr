@@ -14,7 +14,7 @@
     </tr>
 
 % for d in c.rego_room_collection:
-    <tr class="${ h.cycle('even', 'odd')}">
+    <tr class="${ loop.cycle('even', 'odd')}">
         <td>${ h.link_to(str(d.id) + ' (edit)', url=h.url_for(controller='rego_room', action='edit', id=d.id)) }</td>
         <td>${ h.link_to(d.rego.person.firstname + ' ' + d.rego.person.lastname, h.url_for(controller='person', action='view', id=d.rego.person.id)) }, ${ h.link_to('View Registration', h.url_for(controller='registration', action='view', id=d.rego.id)) }</td>
         <td>${ h.line_break(d.room) }

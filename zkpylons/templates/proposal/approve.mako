@@ -13,7 +13,7 @@ ${ h.form(h.url_for()) }
     <th>Change Status</th>
   </tr>
 %   for s in c.proposals:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td>${ h.link_to("%d" % s.id, url=h.url_for(action='view', id=s.id)) }</td>
     <td>${ h.link_to("%s" % (h.util.html_escape(s.title)), url=h.url_for(action='view', id=s.id)) }</td>
     <td>${ s.type.name }</td>

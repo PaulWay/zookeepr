@@ -12,7 +12,7 @@
 #</tr>
 
 % for (p, r) in c.fairies:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ p.firstname |h} ${ p.lastname |h}</td>
     <td>${ r.company |h}</td>
   </tr>
@@ -29,7 +29,7 @@
 #</tr>
 
 % for (p, r) in c.profs:
-  <tr class="${ h.cycle('even', 'odd')}"
+  <tr class="${ loop.cycle('even', 'odd')}"
 %   if r.type=='Fairy Penguin Sponsor':
       style="font-weight: bold"
 %   endif

@@ -79,7 +79,7 @@ ${ h.select('person.country', None, h.countries()) }
 <p class="label">Your <b>username</b> on social networking sites:
 <table>
 % for network in c.social_networks:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td><img style="padding-right: 5px" src="/images/${ network.logo }">${ network.name }</td>
 %   if c.person:
     <td>${ h.hidden('social_network-%s.name' % network.id, value=network.name) }${ h.text('social_network-%s.account_name' % network.id, value=c.person.social_network[network.name]) }</td>

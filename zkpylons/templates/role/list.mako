@@ -16,7 +16,7 @@
 
 % for st in c.role_collection:
 <tr>
-<tr class="${ h.cycle('odd', 'even') }">
+<tr class="${ loop.cycle('odd', 'even') }">
         <td>${ h.link_to(st.name, url=h.url_for(action='view', id=st.id)) }</td>
         <td>
 %   if st.pretty_name is not None:

@@ -26,7 +26,7 @@
       </tr>
 
 % for voucher in c.vouchers:
-      <tr class="${ h.cycle('even', 'odd')}">
+      <tr class="${ loop.cycle('even', 'odd')}">
         <td>${ voucher.code }</td>
         <td>
 %   if voucher.products:

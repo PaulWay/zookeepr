@@ -47,59 +47,6 @@ from zkpylons.model import meta
 # Use locale to provide comma grouped currency values
 import locale
 
-def iterdict(items):
-    return dict(items=items, iter=itertools.cycle(items))
-
-def cycle(*args, **kargs):
-    """
-    Return the next cycle of the given list.
-
-    Everytime ``cycle`` is called, the value returned will be the next.
-    item in the list passed to it. This list is reset on every request,.
-    but can also be reset by calling ``reset_cycle()``.
-
-    You may specify the list as either arguments, or as a single list.
-    argument.
-
-    This can be used to alternate classes for table rows::
-
-        # In Myghty...
-        % for item in items:
-        <tr class="<% cycle("even", "odd") %>">
-            ... use item ...
-        </tr>
-        % #endfor
-
-    You can use named cycles to prevent clashes in nested loops. You'll
-    have to reset the inner cycle, manually::
-
-        % for item in items:
-        <tr class="<% cycle("even", "odd", name="row_class") %>
-            <td>
-        %     for value in item.values:
-                <span style="color:'<% cycle("red", "green", "blue",
-                                             name="colors") %>'">
-                            item
-                </span>
-        %     #endfor
-            <% reset_cycle("colors") %>
-            </td>
-        </tr>
-        % #endfor
-    """
-    if len(args) > 1:
-        items = args
-    else:
-        items = args[0]
-    name = kargs.get('name', 'default')
-    cycles = request_config().environ.setdefault('railshelpers.cycles', {})
-
-    cycle = cycles.setdefault(name, iterdict(items))
-
-    if cycles[name].get('items') != items:
-        cycle = cycles[name] = iterdict(items)
-    return cycle['iter'].next()
-
 #def counter(*args, **kwargs):
 #    """Return the next cardinal in a sequence.
 #

@@ -11,7 +11,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for event_type in c.event_type_collection:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ event_type.id }</td>
     <td>${ event_type.name }</td>
 %       if c.can_edit:

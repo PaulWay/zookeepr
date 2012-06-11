@@ -13,7 +13,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for location in c.location_collection:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ h.link_to(location.id, url=h.url_for(action='view', id=location.id)) }</td>
     <td>${ location.display_name }</td>
     <td>${ location.display_order }</td>

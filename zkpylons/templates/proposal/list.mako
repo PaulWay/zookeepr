@@ -37,7 +37,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for s in c.person.proposals:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td>${ h.link_to("%s" % (s.title), url=h.url_for(action='view', id=s.id)) }</td>
     <td>${ s.type.name }</td>
     <td>${ h.truncate(s.abstract) | n}</td>

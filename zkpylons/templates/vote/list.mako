@@ -15,7 +15,7 @@
 
 % for d in c.vote_collection:
 <%   print d %>
-    <tr class="${ h.cycle('even', 'odd')}">
+    <tr class="${ loop.cycle('even', 'odd')}">
         <td>${ h.link_to(str(d.id) + ' (edit)', url=h.url_for(controller='vote', action='edit', id=d.id)) }</td>
         <td>${ h.link_to(d.event.name, h.url_for(controller='event', action='view', id=d.event.id)) }</td>
         <td>${ d.vote_value }</td>

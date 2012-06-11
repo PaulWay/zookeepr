@@ -12,7 +12,7 @@
 % endif
   </tr>
 % for reviewer in c.summary:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td>${ reviewer.Person.firstname } ${ reviewer.Person.lastname }</td>
     <td>${ reviewer.reviews }</td>
     <td>${ reviewer.declined }</td>

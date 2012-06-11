@@ -76,7 +76,7 @@
                graph_invoiced_sales[product.description] = product.qty_invoiced(date = False)
 %>
 
-      <tr class="${ h.cycle('odd', 'even') }">
+      <tr class="${ loop.cycle('odd', 'even') }">
         <td>${ h.link_to(product.description, url=h.url_for(controller='product', action='view', id=product.id)) }</td>
         <td>${ h.yesno(product.active) |n }</td>
         <td>${ h.yesno(product.available()) |n }</td>

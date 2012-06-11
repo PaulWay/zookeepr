@@ -81,7 +81,7 @@ function toggleDiv(id,flagit) {
         <% continue %>
 %    endif
 
-<tr class="${ h.cycle('even', 'odd') }">
+<tr class="${ loop.cycle('even', 'odd') }">
 
 <td>${ i }</td>
 <% i = i + 1 %>

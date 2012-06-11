@@ -11,7 +11,7 @@
         </tr>
 %   for area in category['questions']:
 <%    code = area['name'].replace(' ', '_').replace('.', '_') %>
-        <tr class="${ h.cycle('even', 'odd') }">
+        <tr class="${ loop.cycle('even', 'odd') }">
           <td valign="middle" align="center">${ h.checkbox('volunteer.areas.' + code) }</td>
           <td>${ area['name'] }
 %     if area.has_key('description'):
@@ -24,7 +24,7 @@
         <tr>
             <td colspan='2'><h3>Other Information</h3></td>
         </tr>
-        <tr class="${ h.cycle('even', 'odd') }">
+        <tr class="${ loop.cycle('even', 'odd') }">
           <td valign="top">
             <p class="entries">Other:</p>
           </td>
@@ -34,7 +34,7 @@
           </td>
         </tr>
 
-        <tr class="${ h.cycle('even', 'odd') }">
+        <tr class="${ loop.cycle('even', 'odd') }">
           <td valign="top">
             <p class="entries">Experience:</p>
           </td>

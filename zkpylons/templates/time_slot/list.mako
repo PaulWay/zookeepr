@@ -14,7 +14,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for time_slot in c.time_slot_collection:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ h.link_to(time_slot.id, url=h.url_for(action='view', id=time_slot.id)) }</td>
     <td>${ time_slot.start_time.strftime('%d/%m/%y %H:%M:%S') }</td>
     <td>${ time_slot.end_time.strftime('%d/%m/%y %H:%M:%S') }</td>

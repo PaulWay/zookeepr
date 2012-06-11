@@ -14,7 +14,7 @@
     </tr>
 
 % for d in c.db_content_collection:
-    <tr class="${ h.cycle('even', 'odd')}">
+    <tr class="${ loop.cycle('even', 'odd')}">
         <td>${ h.link_to(str(d.id) + ' (edit)', url=h.url_for(controller='db_content', action='edit', id=d.id)) }</td>
 %   if d.is_news() or d.is_page():
         <td>${ h.link_to(str(d.title) + ' (view)', url=h.url_for(controller='db_content', action='view', id=d.id)) }</td>

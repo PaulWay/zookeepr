@@ -11,7 +11,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for sn in c.social_networks:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ h.link_to(sn.name, url=h.url_for(action='view', id=sn.id)) }</td>
     <td><img src="/images/${ sn.logo }" alt="${ sn.name } logo"></td>
     <td>${ sn.url }</td>

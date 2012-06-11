@@ -136,7 +136,7 @@
     <th>&nbsp;</th>
   </tr>
 %     for s in c.person.proposals:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td>${ h.link_to("%s" % (s.title), url=h.url_for(controller='proposal', action='view', id=s.id)) }</td>
     <td>${ s.type.name }</td>
     <td>${ h.truncate(s.abstract) | n}</td>
@@ -178,7 +178,7 @@
     <th>&nbsp;</th>
   </tr>
 %     for s in c.person.funding:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td>${ s.type.name }</td>
     <td>
 %       if s.status.name == 'Pending':
@@ -225,7 +225,7 @@ This person hasn't registered yet.
     <th>&nbsp;</th>
   </tr>
 %       for n in c.person.registration.notes:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td valign="top">${ n.by.fullname() } <i>${ n.last_modification_timestamp.strftime("%Y-%m-%d&nbsp; %H:%M") | n}</i></td>
     <td valign="top">${ h.line_break(n.note) }</td>
     <td valign="top">${ h.link_to("edit", h.url_for(controller='rego_note', action='edit', id=n.id)) }
@@ -253,7 +253,7 @@ This person hasn't registered yet.
     <th>Payment(s)</th>
   </tr>
 %     for i in c.person.invoices:
-  <tr class="${ h.cycle('even', 'odd') }">
+  <tr class="${ loop.cycle('even', 'odd') }">
     <td>${ h.link_to(str(i.id), h.url_for(controller="invoice", action='view', id=i.id)) }</td>
     <td>${ i.creation_timestamp }</td>
     <td align="right">${ "$%.2f" % (i.total()/100.0) }</td>

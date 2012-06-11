@@ -16,7 +16,7 @@
         <th>payment(s)</th>
       </tr>
 % for i in c.invoice_collection:
-      <tr class="${ h.cycle('even', 'odd')}">
+      <tr class="${ loop.cycle('even', 'odd')}">
 %   if i.person.registration:
 <%       r = i.person.registration %>
           <td>${ h.link_to('id: ' + str(r.id), h.url_for(controller='registration', action='view', id=r.id)) }</td>

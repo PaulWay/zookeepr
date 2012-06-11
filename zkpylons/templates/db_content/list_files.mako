@@ -22,14 +22,14 @@ no_theme = 'true' if c.no_theme else 'false'
     </tr>
 % endif
 % for folder in c.folder_list:
-    <tr class="${ h.cycle('even', 'odd')}">
+    <tr class="${ loop.cycle('even', 'odd')}">
         <td><img src="/images/icons/folder.png" alt="[folder icon]" title="folder"></td>
         <td><a href="/db_content/list_files?folder=${ c.current_path + folder }&no_theme=${ no_theme }">${ folder }</a></td>
         <td><a href="/db_content/delete_folder?folder=${ c.current_path + folder }&current_path=${ c.current_path }&no_theme=${ no_theme }"><img src="/images/icons/user-trash.png" alt="Delete" title="Delete"></a></td>
    </tr>
 % endfor
 % for file in c.file_list:
-    <tr class="${ h.cycle('even', 'odd')}">
+    <tr class="${ loop.cycle('even', 'odd')}">
         <td><img src="/images/icons/mimetypes/${ h.extension(file) }.png" alt="[${ h.extension(file) } icon]" title="${ h.extension(file) }"></td>
         <td><a href="${ c.download_path + file }">${ file }</a></td>
         <td><a href="/db_content/delete_file?file=${ c.current_path + file }&folder=${ c.current_path }&no_theme=${ no_theme }"><img src="/images/icons/user-trash.png" alt="Delete" title="Delete"></a></td>

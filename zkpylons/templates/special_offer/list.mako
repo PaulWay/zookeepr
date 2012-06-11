@@ -12,7 +12,7 @@
     <th>&nbsp;</th>
   </tr>
 %   for offer in c.special_offer_collection:
-  <tr class="${ h.cycle('even', 'odd')}">
+  <tr class="${ loop.cycle('even', 'odd')}">
     <td>${ h.yesno(offer.enabled) |n }</td>
     <td>${ h.link_to(offer.name, url=h.url_for(action='view', id=offer.id)) }</td>
     <td>${ offer.description | n}</td>

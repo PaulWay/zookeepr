@@ -13,7 +13,7 @@
 % for r in c.review_collection:
 %	if r.reviewer == h.signed_in_person():
 
-<tr class="${ h.cycle('even', 'odd') }">
+<tr class="${ loop.cycle('even', 'odd') }">
 
 <td>
 ${ h.link_to("%s - %s" % (r.funding.id, r.funding.person.fullname() ), url=h.url_for(controller='funding_review', action='view', id=r.id)) }
